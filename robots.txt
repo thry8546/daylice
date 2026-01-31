@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Bloquer l'accès à la page d'administration
+Disallow: /assets/page/gestion-user-8546.html
+Disallow: /gestion-user-8546.html
+
+# Bloquer l'accès aux fichiers de configuration
+Disallow: /setup-database.sql
+Disallow: /assets/csv/
+Disallow: /version/
+
+# Bloquer l'accès aux fichiers de recommandations
+Disallow: /assets/recommadations/
+
+Sitemap: https://daylice.ch/sitemap.xml

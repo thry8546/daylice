@@ -1,0 +1,27 @@
+Daylicers@gmail.com
+Daylice2025/!
+
+Data Base
+Url : https://szeaqmesaiosntxudklr.supabase.co
+API public : sb_publishable_qLkQu8k7poeFCZdPBS1psQ_3-JxaaeB
+
+
+OK, faire le backEnd de "index.html" et "assets\page\gestion-user-8546.html", tu ne touche plus le design, j'ai dej créé les tableau etc... sur supabase, voici la data base SQL et Supabase:
+
+SQL : setup-database.sql
+Supabase
+Url : https://szeaqmesaiosntxudklr.supabase.co
+API public : sb_publishable_qLkQu8k7poeFCZdPBS1psQ_3-JxaaeB
+
+Repondre en français si possible.
+
+
+tu vas faire des ajustements, du bloc de paramètres en fonctions du theme, tous les blocs ne ce ressemble pas, voici :
+
+Bannière : Titre - Détails - Image(URL) - Prévisualisation
+Boisson, Plats Chaud, Plats Froids : Nom du produit - Prix Petit - Prix Moyen - Prix Grand - Catégorie - Description
+Promos : Nom du produit - Prix _________________ (si l'admin frappe les premier mots d'un produit qui est dans la base de donné (Boisson - Chaud - Froid), ça fait l'auto complétion du nom et du prix)
+Plat du jour : Nom du produit - Prix - Détails_________________ (si l'admin frappe les premier mots d'un produit qui est dans la base de donné (Boisson - Chaud - Froid), ça fait l'auto complétion du nom et du prix)
+
+pour la liste des items, tu as bien fait, mais tu doit mettre le début du crop sous le bloc des label des items
+

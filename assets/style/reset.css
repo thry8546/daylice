@@ -1,0 +1,31 @@
+/* Reset CSS simplifié */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: calibri;
+    font-size: clamp(18px, calc(18px + (2 * (100vw - 320px)) / 55), 20px); /* 320px -> 18px, 375px -> 20px */
+    line-height: 1.2;
+}
+
+img {
+    /* max-width: 100%; */
+    /* height: auto; */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+

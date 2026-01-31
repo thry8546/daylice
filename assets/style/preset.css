@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+
+:root {
+    --primary-color: #86BF1A;
+    --secondary-color: #FF7B00;
+}
+
+h2, .home-wrapper-link, .wrapper-link {
+  font-family: "Alkatra", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-size: clamp(32px, calc(32px + (8 * (100vw - 320px)) / 80), 40px); /* 320px -> 32px, 400px -> 40px */
+}

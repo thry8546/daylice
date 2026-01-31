@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daylice Café | Tableau de bord</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/image/logo-daylice-favicon.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="/assets/style/app.css" />
+  </head>
+  <body>
+    <!-- Écran de connexion -->
+    <section class="login-screen" id="login-screen">
+      <div class="login-card">
+        <div class="login-visual">
+          <img
+            src="/assets/image/banner-img-2.jpg"
+            alt="Assiette fraîche Daylice"
+            class="login-photo"
+          />
+          <div class="login-photo-filter"></div>
+          <img
+            src="/assets/image/logo-daylice-white.png"
+            alt="Logo Daylice Café"
+            class="login-logo"
+          />
+        </div>
+        <div class="login-form">
+          <div class="login-form-header">
+            <p class="login-eyebrow">Contrôle Administrateur</p>
+            <h1>Ce connecter pour modifier les éléments du site</h1>
+          </div>
+          <form id="login-form">
+            <label class="input-group">
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Entrez un mail"
+                required
+              />
+            </label>
+            <label class="input-group">
+              <span>Mot de passe</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="Entrez un mot de passe"
+                required
+              />
+            </label>
+            <button type="submit" class="btn btn-primary">Entrer</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <img
+            src="/assets/image/logo-daylice-white.png"
+            alt="Logo Daylice"
+          />
+          <div class="sidebar-brand">
+            <p>Daylice Café</p>
+            <span>Contrôle Administrateur</span>
+          </div>
+        </div>
+        <nav class="sidebar-nav" id="sidebar-nav">
+          <button class="nav-link" data-section="bannieres">Bannières</button>
+          <button class="nav-link" data-section="boissons">Boissons</button>
+          <button class="nav-link" data-section="contacts">Contacts</button>
+          <button class="nav-link" data-section="plat-jour">Plat du jour</button>
+          <button class="nav-link is-active" data-section="plats-chauds">
+            Plats chauds
+          </button>
+          <button class="nav-link" data-section="plats-froids">Plats froids</button>
+          <button class="nav-link" data-section="promos">Promos</button>
+        </nav>
+      </aside>
+
+      <main class="main-shell">
+        <header class="topbar">
+          <h1 class="topbar-title">Daylice Café | Contrôle Administrateur</h1>
+          <div class="user-chip">
+            <span class="user-email">Daylicers@gmail.com</span>
+            <button class="btn btn-outline" id="logout-btn">Déconnecté</button>
+          </div>
+        </header>
+
+        <section class="workspace">
+          <div class="table-card">
+            <div class="table-head">
+              <h2>Ajouté</h2>
+              <button class="btn-circle" id="table-add-btn">
+                <span class="plus-icon"></span>
+              </button>
+            </div>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nom du produit</th>
+                    <th>Catégories</th>
+                    <th>Détails</th>
+                    <th>Prix P</th>
+                    <th>Prix M</th>
+                    <th>Prix G</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="form-card">
+            <div class="form-header">
+              <h3 id="form-title">Assortissement en vitrine</h3>
+            </div>
+            <form class="product-form" id="product-form">
+              <label class="input-group">
+                <span>Nom du produit</span>
+                <input
+                  type="text"
+                  name="productName"
+                  placeholder="Assortissement en vitrine"
+                />
+              </label>
+
+              <div class="price-grid" id="price-grid">
+                <label class="input-group">
+                  <span>Prix Petit</span>
+                  <input type="text" name="priceP" placeholder="4,50" />
+                </label>
+                <label class="input-group">
+                  <span>Prix Moyen</span>
+                  <input type="text" name="priceM" placeholder="---" />
+                </label>
+                <label class="input-group">
+                  <span>Prix Grand</span>
+                  <input type="text" name="priceG" placeholder="4,50" />
+                </label>
+              </div>
+
+              <label class="input-group" id="single-price-field" hidden>
+                <span>Prix</span>
+                <input type="text" name="priceSingle" placeholder="4,50" />
+              </label>
+
+              <div class="category-row" id="category-row">
+                <label class="input-group select-group">
+                  <span>Catégories</span>
+                  <select name="category" id="category-select">
+                    <option>Plat du jour</option>
+                    <option selected>Dessert</option>
+                    <option>Plats chauds</option>
+                    <option>Plats froids</option>
+                    <option>Boissons</option>
+                    <option>Promo</option>
+                  </select>
+                </label>
+                <button
+                  type="button"
+                  class="btn-circle ghost"
+                  id="category-add-btn"
+                  aria-label="Ajouter une catégorie"
+                >
+                  <span class="plus-icon"></span>
+                </button>
+              </div>
+
+              <label class="input-group" id="details-field">
+                <span>Détails</span>
+                <textarea
+                  name="details"
+                  rows="5"
+                  placeholder="Nom du produit"
+                ></textarea>
+              </label>
+
+              <label class="input-group" id="banner-image-field" hidden>
+                <span>Image (URL)</span>
+                <input type="text" name="bannerImage" placeholder="/assets/image/banner-img-1.jpg" />
+              </label>
+              <div class="banner-preview" id="banner-preview" hidden>
+                <span>Prévisualisation</span>
+                <div class="banner-preview-box">
+                  <img src="" alt="Aperçu bannière" />
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                <button type="button" class="btn btn-ghost danger" id="delete-btn">Supprimer</button>
+              </div>
+            </form>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="/assets/script/app.js"></script>
+  </body>
+</html>

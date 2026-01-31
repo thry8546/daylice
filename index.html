@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daylice Café | Restaurant & Bar Premium à Fontainemelon</title>
+    <meta name="description" content="Daylice Café - Restaurant et bar premium à Fontainemelon. Découvrez notre menu raffiné, nos cocktails d'exception et notre terrasse élégante.">
+    <meta name="keywords" content="restaurant premium, bar, café, Fontainemelon, terrasse, menu raffiné, cocktails">
+    <meta name="author" content="Daylice Café">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://daylice.ch">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://daylice.ch/">
+    <meta property="og:title" content="Daylice Café | Restaurant & Bar Premium">
+    <meta property="og:description" content="Restaurant et bar premium à Fontainemelon avec terrasse élégante.">
+    <meta property="og:image" content="./assets/image/logo-daylice.png">
+    <meta property="og:locale" content="fr_CH">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daylice Café | Restaurant & Bar Premium">
+    <meta name="twitter:description" content="Restaurant et bar premium à Fontainemelon.">
+    <meta name="twitter:image" content="./assets/image/logo-daylice.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/style/style.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/image/logo-daylice-favicon.png" type="image/x-icon">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Daylice Café",
+      "description": "Restaurant et bar premium à Fontainemelon",
+      "image": "./assets/image/logo-daylice.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenue Robert 12",
+        "addressLocality": "Fontainemelon",
+        "postalCode": "2052",
+        "addressCountry": "CH"
+      },
+      "telephone": "032 852 03 46",
+      "email": "info@daylice.ch",
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday"], "opens": "07:30", "closes": "19:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "07:30", "closes": "20:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:30", "closes": "19:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "18:00"}
+      ],
+      "servesCuisine": "Française, Internationale",
+      "priceRange": "CHF",
+      "acceptsReservations": "True"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#accueil" class="logo">
+                <img src="./assets/image/logo-daylice-white.png" alt="Daylice Café Logo">
+                <span>Daylice</span>
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#accueil" class="nav-link" onclick="toggleMenu()">Accueil</a>
+                <a href="#plat-jour" class="nav-link" onclick="toggleMenu()">Plat du Jour</a>
+                <a href="#menu" class="nav-link" onclick="toggleMenu()">La Carte</a>
+                <a href="#promos" class="nav-link" onclick="toggleMenu()">Promos</a>
+                <a href="#excellence" class="nav-link" onclick="toggleMenu()">Notre Maison</a>
+                <a href="#horaires" class="nav-link" onclick="toggleMenu()">Horaires</a>
+                <a href="#contact" class="nav-link" onclick="toggleMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section id="accueil" class="hero">
+        <div class="slider-container" id="sliderContainer">
+            <!-- Slides injectés dynamiquement -->
+            <div class="loading" style="color: white; text-align: center; padding-top: 40vh;">
+                <i class="fas fa-spinner fa-spin"></i> Chargement...
+            </div>
+        </div>
+        <div class="slider-nav" id="sliderDots">
+            <!-- Dots injectés dynamiquement -->
+        </div>
+    </section>
+
+    <!-- Plat du Jour -->
+    <section id="plat-jour" class="section-plat-jour">
+        <div class="plat-jour-container">
+            <div class="plat-jour-text">
+                <span class="section-label">Découvrez</span>
+                <h2 class="plat-jour-title">Le Plat du Jour</h2>
+                <div class="plat-name" id="dailyName">Chargement...</div>
+                <p class="plat-description" id="dailyDesc">Veuillez patienter pendant le chargement du plat du jour.</p>
+                <div class="plat-price" id="dailyPrice"><span>CHF</span>--</div>
+            </div>
+            <div class="plat-image-wrapper">
+                <div class="plat-badge">Jour</div>
+                <img src="./assets/image/pizza.png" alt="Plat du jour" class="plat-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="section-menu">
+        <div class="menu-bg"></div>
+        <div class="menu-container">
+            <div class="menu-header">
+                <span class="section-label">Notre Carte</span>
+                <h2 class="menu-title">Menu Raffiné</h2>
+            </div>
+
+            <div class="menu-tabs-wrapper">
+                <div class="menu-tabs">
+                    <button class="menu-tab active" onclick="MenuTabs.showTab('chaud', this)">Plats Chauds</button>
+                    <button class="menu-tab" onclick="MenuTabs.showTab('froid', this)">Plats Froids</button>
+                    <button class="menu-tab" onclick="MenuTabs.showTab('boisson', this)">Boissons</button>
+                </div>
+            </div>
+
+            <div class="menu-content-wrapper">
+                <!-- Plats Chauds -->
+                <div id="menu-chaud" class="menu-content active">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Chargement du menu...
+                    </div>
+                </div>
+
+                <!-- Plats Froids -->
+                <div id="menu-froid" class="menu-content">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Chargement du menu...
+                    </div>
+                </div>
+
+                <!-- Boissons -->
+                <div id="menu-boisson" class="menu-content">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Chargement du menu...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promos -->
+    <section id="promos" class="section-promos">
+        <div class="promos-container">
+            <h2 class="promos-title">Promos du Mois</h2>
+            <div class="promos-list" id="promosList">
+                <div class="loading" style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-spinner fa-spin"></i> Chargement des promotions...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excellence -->
+    <section id="excellence" class="section-excellence">
+        <div class="excellence-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Notre Excellence</span>
+                <h2 class="section-title">Qualité & Art de Vivre</h2>
+            </div>
+
+            <div class="excellence-grid">
+                <div class="excellence-card">
+                    <div class="excellence-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Qualité des Produits</h3>
+                    <p>Snack ne veut pas dire junk-food : ingrédients sourcés avec soin, respect du terroir et du porte-monnaie.</p>
+                    <div class="origin-list">
+                        <div class="origin-item"><span class="origin-dot"></span>Bœuf : Suisse</div>
+                        <div class="origin-item"><span class="origin-dot"></span>Porc : Suisse/Italie</div>
+                        <div class="origin-item"><span class="origin-dot"></span>Poulet : Suisse/Allemagne</div>
+                        <div class="origin-item"><span class="origin-dot"></span>Saumon : Norvège</div>
+                    </div>
+                </div>
+
+                <div class="excellence-card">
+                    <div class="excellence-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Convivialité</h3>
+                    <p>Toute notre équipe cherche à répondre aux attentes de nos hôtes, avec le sourire comme signature.</p>
+                </div>
+
+                <div class="excellence-card">
+                    <div class="excellence-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Terrasse & Détente</h3>
+                    <p>34 places et 4 transats en été pour des apéros en toute détente. Terrasse self-service l'hiver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horaires -->
+    <section id="horaires" class="section-horaires">
+        <div class="horaires-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Planification</span>
+                <h2 class="section-title">Horaires d'Ouverture</h2>
+            </div>
+
+            <div class="horaires-container">
+                <div class="horaire-item">
+                    <span class="jour">Lundi - Mercredi</span>
+                    <span class="heures">07:30 - 19:00</span>
+                </div>
+                <div class="horaire-item">
+                    <span class="jour">Jeudi</span>
+                    <span class="heures">07:30 - 20:00</span>
+                </div>
+                <div class="horaire-item">
+                    <span class="jour">Vendredi</span>
+                    <span class="heures">07:30 - 19:00</span>
+                </div>
+                <div class="horaire-item">
+                    <span class="jour">Samedi</span>
+                    <span class="heures">07:00 - 18:00</span>
+                </div>
+                <div class="horaire-item">
+                    <span class="jour">Dimanche & Fériés</span>
+                    <span class="ferme">Fermé</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-contact">
+        <div class="contact-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Contactez-nous</span>
+                <h2 class="section-title" style="color: white;">Restons en Contact</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" id="contactInfo">
+                    <div class="contact-item">
+                        <div class="contact-label">Adresse</div>
+                        <span class="contact-value" style="cursor: default;">Avenue Robert 12<br>2052 Fontainemelon</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Téléphone</div>
+                        <a href="tel:0328520346" class="contact-value">032 852 03 46</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <a href="mailto:info@daylice.ch" class="contact-value">info@daylice.ch</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-label">Facebook</div>
+                        <a href="https://www.facebook.com/daylice" target="_blank" rel="noopener" class="contact-value">Facebook</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-label">Instagram</div>
+                        <a href="https://www.instagram.com/daylice" target="_blank" rel="noopener" class="contact-value">Instagram</a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/daylice" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/daylice" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-box">
+                    <div class="map-icon">
+                        <i class="fas fa-map-marked-alt" style="font-size: 2.5rem; opacity: 0.5;"></i>
+                    </div>
+                    <div class="map-address">Avenue Robert 12,<br>2052 Fontainemelon</div>
+                    <a href="https://maps.google.com/?q=Avenue+Robert+12+2052+Fontainemelon" target="_blank" rel="noopener" class="btn-map">Voir sur Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="./assets/image/logo-daylice-white.png" alt="Daylice Café Logo">
+                <span>Restaurant Café</span>
+            </div>
+        </div>
+        <p style="margin-top: 1rem;">© 2026 <a href="/assets/page/gestion-user-8546.html" target="_blank" style="color: inherit; text-decoration: underline;">Daylice Café</a> | <a href="./assets/page/gestion-user-8546.html" style="color: inherit; text-decoration: underline;">Admin</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./assets/script/main.js"></script>
+</body>
+</html>
